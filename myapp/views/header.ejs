@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>
+    <% if (user) { %>
+      <% if (pageTitle === 'edit') { %>
+        Edit <%= user.name %>
+      <% } else { %>
+        <%= user.name %>
+      <% } %>
+    <% } else { %>
+      <% if (pageTitle === '5xx') { %>
+        Internal Server Error
+      <% } else if (pageTitle === '404') { %>
+        Not Found
+      <% } else { %>
+        Users
+      <% } %>
+    <% } %>
+  </title>
+</head>
+<body>

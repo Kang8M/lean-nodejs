@@ -1,0 +1,24 @@
+{
+  "name": "post",
+  "version": "1.0.0",
+  "description": "lean node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kang8M/lean-nodejs.git"
+  },
+  "author": "hunglm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kang8M/lean-nodejs/issues"
+  },
+  "homepage": "https://github.com/Kang8M/lean-nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "formidable": "^1.2.2",
+    "nodemailer": "^6.4.17"
+  }
+}
