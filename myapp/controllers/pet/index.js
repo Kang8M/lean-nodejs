@@ -3,12 +3,14 @@ var controllerName = 'pets'
 
 exports.show = function(req, res){
   var pet = getPetById(req.params.pet_id);
+  if (!pet) return redirect('404');
   
   res.render(controllerName + '/show', { pet: pet });
 };
 
 exports.edit = function(req, res){
   var pet = getPetById(req.params.pet_id);
+  if (!pet) return redirect('404');
 
   res.render(controllerName + '/edit', { pet: pet });
 };
@@ -21,7 +23,5 @@ exports.update = function(req, res){
 };
 
 function getPetById(id) {
-  var pet = db.pets[id];
-  if (!pet) return next('route');
-  return pet;
+  return db.pets[id];
 }

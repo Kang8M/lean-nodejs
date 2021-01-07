@@ -16,6 +16,14 @@ var app = module.exports = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// allow overriding methods in query (?_method=put)
+app.use(methodOverride('_method'));
+
+// parse request bodies (req.body)
+app.use(express.urlencoded({
+  extended: true
+}));
+
 // Use Routes
 app.use('/', main)
 app.use('/users', users)
@@ -43,14 +51,6 @@ app.use(session({
   saveUninitialized: false,
   secret: 'alibaba'
 }));
-
-// parse request bodies (req.body)
-app.use(express.urlencoded({
-  extended: true
-}));
-
-// allow overriding methods in query (?_method=put)
-app.use(methodOverride('_method'));
 
 app.use((req, res, next) => {
   var msgs = req.session.message || [];

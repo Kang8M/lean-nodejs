@@ -2,14 +2,6 @@
 
 <h1><%= user.name %> <a href="/users/<%= user.id %>/edit">edit</a></h1>
 
-<% if (hasMessages) { %>
-  <ul>
-    <% messages.forEach(function(message){ %>
-      <li><%= user.message %></li>
-    <% }); %>
-  </ul>
-<% } %>
-
 <% if (user.pets.length) { %>
   <p>View <%= user.name %>'s pets:</p>
   <ul>

@@ -6,6 +6,6 @@ router.get('/:pet_id', petController.show);
 
 router.get('/:pet_id/edit', petController.edit);
 
-router.put('/:pet_id/', petController.update);
+router.put('/:pet_id?_method=put', petController.update);
 
 module.exports = router;
