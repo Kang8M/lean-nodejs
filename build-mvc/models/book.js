@@ -9,8 +9,8 @@ var bookSchema = Schema({
   genre: [{type: Schema.Types.ObjectId, ref: 'Genre'}]
 })
 
-bookSchema.virtual('url').get(() => {
-  return '/catalog/book/' + this._id
+bookSchema.virtual('url').get(function() {
+  return '/catalog/book/' + this._id;
 })
 
 module.exports = mongoose.model('Book', bookSchema)
