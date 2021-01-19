@@ -12,3 +12,8 @@ a {
   padding: 0;
   list-style: none;
 }
+
+ul.err_message li {
+  color: red;
+  font-size: 20px;
+}

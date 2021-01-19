@@ -108,9 +108,13 @@ exports.author_create_post = [
                         res.redirect(author.url);
                     })
                 } else {
-                    var err = new Error('The Author is exist!');
-                    err.status = 404;
-                    return next(err);
+                    res.render('author_form', {
+                        title: 'Create Author',
+                        errors: [{
+                            msg: 'Author is Exist!'
+                        }]
+                    });
+                    return;
                 }
             });
         }
